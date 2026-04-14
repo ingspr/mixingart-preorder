@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -408,68 +408,51 @@
   <div class="form-inner">
     <div class="form-title">선예약 신청하기</div>
     <div class="form-desc">
-      아래 정보를 입력해 주세요. 전자책 발행 시 입력하신 이메일로 구매 링크와 할인 코드를 보내드립니다.<br>
+      아래 구글 폼을 작성해 주세요. 전자책 발행 시 입력하신 이메일로 구매 링크와 할인 코드를 보내드립니다.<br>
       <strong style="color:var(--acc);">선착순 30명 마감 후에는 정가(20,000원)로만 구매 가능합니다.</strong>
     </div>
 
-    <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
-
-      <div class="form-group">
-        <label>이름 <span class="required">*</span></label>
-        <input type="text" name="entry.XXXXXXX1" placeholder="홍길동" required>
-      </div>
-
-      <div class="form-group">
-        <label>이메일 <span class="required">*</span></label>
-        <input type="email" name="entry.XXXXXXX2" placeholder="example@email.com" required>
-        <div class="hint">전자책 발행 시 구매 링크를 이 이메일로 보내드립니다</div>
-      </div>
-
-      <div class="form-group">
-        <label>인스타그램 아이디</label>
-        <input type="text" name="entry.XXXXXXX3" placeholder="@mixingart">
-        <div class="hint">댓글 예약 확인용 (선택)</div>
-      </div>
-
-      <div class="form-group">
-        <label>카카오톡 ID</label>
-        <input type="text" name="entry.XXXXXXX4" placeholder="카카오톡 ID">
-        <div class="hint">문의·발송 시 연락 드릴 수 있습니다 (선택)</div>
-      </div>
-
-      <div class="form-group">
-        <label>현재 믹싱 경력</label>
-        <select name="entry.XXXXXXX5">
-          <option value="">선택해주세요</option>
-          <option value="입문 (1년 미만)">입문 (1년 미만)</option>
-          <option value="초급 (1~3년)">초급 (1~3년)</option>
-          <option value="중급 (3~7년)">중급 (3~7년)</option>
-          <option value="고급 (7년 이상)">고급 (7년 이상)</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>가장 어려운 점 (선택)</label>
-        <textarea name="entry.XXXXXXX6" placeholder="예: 컴프를 걸어도 뭔가 다른 것 같고, 어택/릴리스 세팅이 너무 어렵습니다."></textarea>
-        <div class="hint">전자책 내용 개선에 참고하겠습니다</div>
-      </div>
-
-      <div class="agree-box">
-        수집된 개인정보(이름, 이메일)는 전자책 구매 링크 발송 및 MixingArt 서비스 안내 목적으로만 사용되며,
-        제3자에게 제공되지 않습니다.
-        <div class="agree-check">
-          <input type="checkbox" required>
-          <span>개인정보 수집 및 이용에 동의합니다 <span style="color:var(--acc);">*</span></span>
-        </div>
-      </div>
-
-      <button type="submit" class="submit-btn">선예약 신청하기 (14,000원)</button>
-      <div class="submit-note">
-        ※ 신청 후 실제 결제는 전자책 발행 시 안내드립니다<br>
-        ※ 30명 마감 시 신청이 자동 종료됩니다
-      </div>
-
-    </form>
+    <style>
+      .gform-wrap {
+        position: relative;
+        border-top: 3px solid var(--acc);
+        margin-top: 8px;
+      }
+      .gform-wrap iframe {
+        width: 100%;
+        min-height: 900px;
+        border: none;
+        display: block;
+        filter: invert(1) hue-rotate(180deg);
+      }
+      .gform-note {
+        font-size: 11px;
+        color: var(--tx3);
+        text-align: center;
+        margin-top: 12px;
+        line-height: 1.6;
+      }
+    </style>
+    <div class="gform-wrap">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSerw1lfXw_XJhKmHn7WSkBAbUq2Gt_rrJUxvMtozd9l0yeD2A/viewform?embedded=true"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        loading="lazy">
+        로딩 중...
+      </iframe>
+    </div>
+    <div style="background:var(--bg3);border-top:3px solid var(--acc);padding:24px;margin-top:24px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.3em;color:var(--acc);margin-bottom:12px;">입금 계좌</div>
+      <div style="font-size:18px;font-weight:900;color:var(--tx);margin-bottom:6px;">우리은행 1002-554-617711</div>
+      <div style="font-size:14px;color:var(--tx2);">예금주 배성윤</div>
+      <div style="font-size:12px;color:var(--tx3);margin-top:8px;">입금 후 폼을 작성해 주시면 발행 시 할인 코드를 보내드립니다</div>
+    </div>
+    <div class="gform-note">
+      ※ 신청 후 실제 결제는 전자책 발행 시 이메일로 안내드립니다<br>
+      ※ 선착순 30명 마감 시 신청이 자동 종료됩니다
+    </div>
   </div>
 </div>
 
