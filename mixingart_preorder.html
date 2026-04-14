@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컴프레서 완전 정복 전자책 — 선예약 30명 한정 30% 할인 | MixingArt</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --acc: #E8FF47;
+    --bg: #0D0D0D;
+    --bg2: #141414;
+    --bg3: #1A1A1A;
+    --tx: #EEEEEE;
+    --tx2: #AAAAAA;
+    --tx3: #555555;
+    --border: #2A2A2A;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--tx);
+    min-height: 100vh;
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    height: 5px;
+    background: var(--acc);
+    width: 100%;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+
+  .brand {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    color: var(--acc);
+    margin-bottom: 20px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--acc);
+    color: #0D0D0D;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 6px 18px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .hero-title span { color: var(--acc); }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--tx2);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  /* PRICE BLOCK */
+  .price-block {
+    background: var(--bg3);
+    border-top: 3px solid var(--acc);
+    padding: 28px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .original-price {
+    font-size: 14px;
+    color: var(--tx3);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .sale-price {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--acc);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .sale-note {
+    font-size: 13px;
+    color: var(--tx2);
+  }
+
+  .condition {
+    font-size: 13px;
+    color: #FF8844;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+  /* COUNTER */
+  .counter-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 16px 24px;
+    margin-bottom: 36px;
+  }
+
+  .counter-label {
+    font-size: 13px;
+    color: var(--tx2);
+  }
+
+  .counter-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--acc);
+  }
+
+  .counter-total {
+    font-size: 13px;
+    color: var(--tx3);
+  }
+
+  /* WHAT YOU GET */
+  .section {
+    max-width: 680px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--acc);
+    margin-bottom: 16px;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .feature-item {
+    background: var(--bg3);
+    padding: 18px 16px;
+    border-left: 3px solid var(--acc);
+  }
+
+  .feature-item-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 4px;
+  }
+
+  .feature-item-sub {
+    font-size: 12px;
+    color: var(--tx2);
+    line-height: 1.6;
+  }
+
+  /* FORM */
+  .form-card {
+    max-width: 680px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  .form-inner {
+    background: var(--bg2);
+    border-top: 4px solid var(--acc);
+    padding: 36px 32px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--tx);
+    margin-bottom: 6px;
+  }
+
+  .form-desc {
+    font-size: 13px;
+    color: var(--tx2);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--tx);
+    margin-bottom: 8px;
+  }
+
+  label .required {
+    color: var(--acc);
+    margin-left: 3px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    color: var(--tx);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--acc);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .hint {
+    font-size: 11px;
+    color: var(--tx3);
+    margin-top: 5px;
+  }
+
+  /* AGREE */
+  .agree-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 16px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: var(--tx2);
+    line-height: 1.7;
+  }
+
+  .agree-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .agree-check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--acc);
+  }
+
+  .agree-check span {
+    font-size: 13px;
+    color: var(--tx);
+  }
+
+  /* SUBMIT */
+  .submit-btn {
+    width: 100%;
+    background: var(--acc);
+    color: #0D0D0D;
+    border: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    padding: 18px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .submit-btn:hover { opacity: 0.88; }
+
+  .submit-note {
+    font-size: 11px;
+    color: var(--tx3);
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--acc);
+    margin-bottom: 6px;
+  }
+
+  .footer-info {
+    font-size: 12px;
+    color: var(--tx3);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 480px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .sale-price { font-size: 40px; }
+    .form-inner { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="brand">MixingArt × INGSPR</div>
+  <div class="badge">선예약 30명 한정 · 30% 할인</div>
+  <div class="hero-title">
+    컴프레서 완전 정복<br>
+    <span>전자책 선예약</span>
+  </div>
+  <div class="hero-sub">
+    컴프레서의 근본적 해설 — Variable MU부터 VCA까지<br>
+    1,000여 곡 작업 엔지니어 INGSPR의 현장 노하우를 담았습니다
+  </div>
+
+  <div class="price-block">
+    <div class="original-price">정가 20,000원</div>
+    <div class="sale-price">14,000원</div>
+    <div class="sale-note">선예약 30% 할인가</div>
+    <div class="condition">★ 선착순 30명 한정 — 마감 시 정가 판매 전환</div>
+  </div>
+
+  <div class="counter-block">
+    <div class="counter-label">현재 예약 인원</div>
+    <div class="counter-num">0</div>
+    <div class="counter-total">/ 30명</div>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<div class="section">
+  <div class="section-title">전자책에 담긴 내용</div>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <div class="feature-item-title">6가지 회로 타입 완전 해설</div>
+      <div class="feature-item-sub">Vari-Mu / Opto / FET / Diode / VCA<br>타입별 작동 원리부터 소리 차이까지</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-item-title">시대별 발전 타임라인</div>
+      <div class="feature-item-sub">1950s~현재 컴프레서 역사<br>왜 소리가 다른지 근본 이해</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-item-title">장비별 실전 세팅</div>
+      <div class="feature-item-sub">1176 / LA-2A / SSL G-Bus / API 2500<br>소스별 어택·릴리스·GR 세팅값</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-item-title">패러렐 컴프레션 완전 정복</div>
+      <div class="feature-item-sub">라우팅 도해 / Brauerize 기법<br>드럼·베이스 실전 적용법</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-item-title">거장 명언 + 해설</div>
+      <div class="feature-item-sub">Clearmountain / CLA / Scheps 등<br>8인의 컴프 철학과 실전 의미</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-item-title">7단계 총정리</div>
+      <div class="feature-item-sub">기초→어택→릴리스→레시오→<br>사이드체인→음색→균일화</div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-card">
+  <div class="form-inner">
+    <div class="form-title">선예약 신청하기</div>
+    <div class="form-desc">
+      아래 정보를 입력해 주세요. 전자책 발행 시 입력하신 이메일로 구매 링크와 할인 코드를 보내드립니다.<br>
+      <strong style="color:var(--acc);">선착순 30명 마감 후에는 정가(20,000원)로만 구매 가능합니다.</strong>
+    </div>
+
+    <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+
+      <div class="form-group">
+        <label>이름 <span class="required">*</span></label>
+        <input type="text" name="entry.XXXXXXX1" placeholder="홍길동" required>
+      </div>
+
+      <div class="form-group">
+        <label>이메일 <span class="required">*</span></label>
+        <input type="email" name="entry.XXXXXXX2" placeholder="example@email.com" required>
+        <div class="hint">전자책 발행 시 구매 링크를 이 이메일로 보내드립니다</div>
+      </div>
+
+      <div class="form-group">
+        <label>인스타그램 아이디</label>
+        <input type="text" name="entry.XXXXXXX3" placeholder="@mixingart">
+        <div class="hint">댓글 예약 확인용 (선택)</div>
+      </div>
+
+      <div class="form-group">
+        <label>카카오톡 ID</label>
+        <input type="text" name="entry.XXXXXXX4" placeholder="카카오톡 ID">
+        <div class="hint">문의·발송 시 연락 드릴 수 있습니다 (선택)</div>
+      </div>
+
+      <div class="form-group">
+        <label>현재 믹싱 경력</label>
+        <select name="entry.XXXXXXX5">
+          <option value="">선택해주세요</option>
+          <option value="입문 (1년 미만)">입문 (1년 미만)</option>
+          <option value="초급 (1~3년)">초급 (1~3년)</option>
+          <option value="중급 (3~7년)">중급 (3~7년)</option>
+          <option value="고급 (7년 이상)">고급 (7년 이상)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>가장 어려운 점 (선택)</label>
+        <textarea name="entry.XXXXXXX6" placeholder="예: 컴프를 걸어도 뭔가 다른 것 같고, 어택/릴리스 세팅이 너무 어렵습니다."></textarea>
+        <div class="hint">전자책 내용 개선에 참고하겠습니다</div>
+      </div>
+
+      <div class="agree-box">
+        수집된 개인정보(이름, 이메일)는 전자책 구매 링크 발송 및 MixingArt 서비스 안내 목적으로만 사용되며,
+        제3자에게 제공되지 않습니다.
+        <div class="agree-check">
+          <input type="checkbox" required>
+          <span>개인정보 수집 및 이용에 동의합니다 <span style="color:var(--acc);">*</span></span>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">선예약 신청하기 (14,000원)</button>
+      <div class="submit-note">
+        ※ 신청 후 실제 결제는 전자책 발행 시 안내드립니다<br>
+        ※ 30명 마감 시 신청이 자동 종료됩니다
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">MixingArt — INGSPR</div>
+  <div class="footer-info">
+    믹싱 의뢰 · 레슨 문의 : KakaoTalk <strong style="color:var(--acc);">mixingart</strong><br>
+    mixingart.kr
+  </div>
+</footer>
+
+</body>
+</html>
