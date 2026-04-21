@@ -423,10 +423,10 @@
   <div style="margin-top:20px; max-width:340px; margin-left:auto; margin-right:auto;">
     <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--tx3); margin-bottom:6px;">
       <span>특가 현황</span>
-      <span style="color:var(--acc);">0 / 30명</span>
+      <span id="order-count" style="color:var(--acc);">— / 30명</span>
     </div>
     <div style="background:var(--bg3); border-radius:2px; height:6px; overflow:hidden;">
-      <div style="width:0%; height:100%; background:var(--acc); border-radius:2px;"></div>
+      <div id="order-bar" style="width:0%; height:100%; background:var(--acc); border-radius:2px; transition:width 0.6s ease;"></div>
     </div>
     <div style="font-size:11px; color:#ff4747; margin-top:6px;">선착순 30명 한정</div>
   </div>
@@ -622,6 +622,32 @@
       document.getElementById('success-msg').style.display = 'block';
     }, 600);
   }
+
+  // 진행 현황 바 업데이트
+  // Apps Script 웹 앱 배포 후 아래 URL을 교체하세요
+  const SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL';
+
+  function updateOrderBar() {
+    if (!SCRIPT_URL || SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL') return;
+    fetch(SCRIPT_URL)
+      .then(r => r.json())
+      .then(data => {
+        const count = data.count || 0;
+        const max   = data.max   || 30;
+        const pct   = Math.min(100, Math.round((count / max) * 100));
+
+        const countEl = document.getElementById('order-count');
+        const barEl   = document.getElementById('order-bar');
+        if (countEl) countEl.textContent = `${count} / ${max}명`;
+        if (barEl)   barEl.style.width   = pct + '%';
+
+        // 마감 임박 (90% 이상) 강조
+        if (pct >= 90 && barEl) barEl.style.background = '#ff4747';
+      })
+      .catch(() => {}); // 실패해도 조용히
+  }
+
+  updateOrderBar();
 </script>
 
 </body>
