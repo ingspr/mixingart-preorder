@@ -420,12 +420,12 @@
   </div>
 
   <!-- 진행 바 -->
-  <div style="margin-top:20px; max-width:340px; margin-left:auto; margin-right:auto;">
-    <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--tx3); margin-bottom:6px;">
-      <span>특가 현황</span>
-      <span id="order-count" style="color:var(--acc);">— / 30명</span>
+  <div style="margin-top:24px; max-width:340px; margin-left:auto; margin-right:auto;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+      <span style="font-size:11px; color:var(--tx3);">특가 현황</span>
+      <span id="order-count" style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--acc); letter-spacing:1px;">— / 30</span>
     </div>
-    <div style="background:var(--bg3); border-radius:2px; height:6px; overflow:hidden;">
+    <div style="background:var(--bg3); border-radius:2px; height:8px; overflow:hidden;">
       <div id="order-bar" style="width:0%; height:100%; background:var(--acc); border-radius:2px; transition:width 0.6s ease;"></div>
     </div>
     <div style="font-size:11px; color:#ff4747; margin-top:6px;">선착순 30명 한정</div>
@@ -605,6 +605,32 @@
     </div>
   </div>
 
+  <!-- 학원 대량구입 -->
+  <div class="section">
+    <div class="section-label">Bulk Order</div>
+    <h2>학원 · 단체 대량구입 문의</h2>
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:4px; padding:28px 32px;">
+      <p style="color:var(--tx2); line-height:1.9; margin:0 0 20px;">
+        학원, 교육기관, 스터디 그룹 등 <strong style="color:var(--acc);">5부 이상</strong> 단체 구매 시<br>
+        별도 할인가로 제공해 드립니다.<br>
+        아래 카카오톡으로 문의해 주시면 빠르게 안내드리겠습니다.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:10px; font-size:14px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="color:var(--tx3); width:70px;">카카오톡</span>
+          <strong style="color:var(--acc);">mixingart</strong>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="color:var(--tx3); width:70px;">인스타그램</span>
+          <strong style="color:var(--acc);">@mixingart</strong>
+        </div>
+      </div>
+      <div style="margin-top:20px; padding:14px 16px; background:var(--bg3); border:1px solid var(--border); border-radius:3px; font-size:12px; color:var(--tx3); line-height:1.8;">
+        문의 시 구매 수량과 용도(학원/스터디 등)를 함께 알려주시면 더 빠르게 안내드립니다.
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <!-- iframe for form submit (페이지 이동 방지) -->
@@ -652,7 +678,7 @@
 
         const countEl = document.getElementById('order-count');
         const barEl   = document.getElementById('order-bar');
-        if (countEl) countEl.textContent = `${count} / ${max}명`;
+        if (countEl) countEl.textContent = count + ' / ' + max;
         if (barEl)   barEl.style.width   = pct + '%';
 
         // 마감 임박 (90% 이상) 강조
