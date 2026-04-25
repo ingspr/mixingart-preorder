@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컴프레서 완전 정복 전자책 특가 | MixingArt</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: #111111;
+    --bg2: #161616;
+    --bg3: #1e1e1e;
+    --acc: #E8FF47;
+    --tx: #f0f0f0;
+    --tx2: #aaaaaa;
+    --tx3: #666666;
+    --border: #2a2a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--tx);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--acc);
+  }
+  .logo span { color: var(--tx2); font-size: 13px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; letter-spacing: 0; margin-left: 10px; }
+
+  /* HERO */
+  .hero {
+    background: var(--bg2);
+    border-bottom: 3px solid var(--acc);
+    padding: 60px 24px 48px;
+    text-align: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--acc);
+    color: #111;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 8vw, 56px);
+    letter-spacing: 3px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--acc); }
+  .hero-sub {
+    color: var(--tx2);
+    font-size: 14px;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto 32px;
+  }
+
+  /* PRICE BADGE */
+  .price-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .price-original {
+    font-size: 14px;
+    color: var(--tx3);
+    text-decoration: line-through;
+  }
+  .price-sale {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--acc);
+    letter-spacing: 1px;
+  }
+  .price-badge {
+    background: #ff4747;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+  .price-note {
+    font-size: 12px;
+    color: var(--tx3);
+    margin-top: 4px;
+  }
+
+  /* LIMIT BAR */
+  .limit-bar {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .limit-dot {
+    width: 8px; height: 8px;
+    background: var(--acc);
+    border-radius: 50%;
+    animation: blink 1.2s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  /* MAIN */
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 48px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--acc);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .section p {
+    color: var(--tx2);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--acc);
+    padding: 20px 24px;
+    border-radius: 0 4px 4px 0;
+  }
+  .toc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--tx2);
+  }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--acc);
+    min-width: 24px;
+  }
+
+  /* FEATURE GRID */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 4px;
+  }
+  .feature-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .feature-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .feature-card p {
+    font-size: 12px;
+    color: var(--tx3);
+    margin: 0;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  /* COPY BUTTON */
+  .copy-btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--bg3);
+    border: 1px solid var(--acc);
+    color: var(--acc);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover { background: var(--acc); color: #111; }
+  .copy-toast {
+    display: none;
+    font-size: 12px;
+    color: var(--acc);
+    margin-top: 8px;
+  }
+
+  /* FORM */
+  .form-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--acc);
+    padding: 32px 28px;
+    border-radius: 0 0 4px 4px;
+  }
+  .form-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .form-desc {
+    font-size: 13px;
+    color: var(--tx2);
+    margin-bottom: 28px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--tx2);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .required { color: var(--acc); }
+  input, select, textarea {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--tx);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--acc);
+  }
+  textarea { min-height: 90px; resize: vertical; }
+  .hint {
+    font-size: 11px;
+    color: var(--tx3);
+    margin-top: 5px;
+  }
+  select option { background: var(--bg3); }
+
+  .agree-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: var(--tx3);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .agree-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--tx2);
+  }
+  input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--acc);
+  }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--acc);
+    color: #111;
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: opacity 0.2s;
+  }
+  .submit-btn:hover { opacity: 0.85; }
+  .submit-note {
+    font-size: 11px;
+    color: var(--tx3);
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+
+  /* SUCCESS MESSAGE */
+  .success-msg {
+    display: none;
+    background: var(--bg3);
+    border: 1px solid var(--acc);
+    border-radius: 4px;
+    padding: 32px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .success-msg h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--acc);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .success-msg p {
+    font-size: 13px;
+    color: var(--tx2);
+    line-height: 1.8;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: var(--acc);
+    margin-bottom: 8px;
+  }
+  .footer-info {
+    font-size: 12px;
+    color: var(--tx3);
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MixingArt <span>by INGSPR</span></div>
+  <div style="font-size:12px; color:var(--tx3);">KakaoTalk: mixingart</div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">E-Book 특가</div>
+  <h1>컴프레서<br><span>완전 정복</span></h1>
+  <p class="hero-sub">Variable MU · Opto · FET · VCA — 타입별 원리부터 실전 세팅값까지, 믹싱 엔지니어 INGSPR의 10년 노하우</p>
+
+  <div class="price-wrap">
+    <span class="price-original">정가 24,000원</span>
+    <span class="price-sale">18,000원</span>
+    <span class="price-badge">선착순 25% 할인</span>
+  </div>
+  <div class="price-note">선착순 30명 한정 · 마감 후 정가 전환</div>
+
+  <div class="limit-bar">
+    <div class="limit-dot"></div>
+    <span>2차 특가 진행 중 — 선착순 30명 마감</span>
+  </div>
+
+  <!-- 마감일 안내 -->
+  <div style="margin-top:14px; display:inline-block; background:#ff4747; color:#fff; font-size:12px; font-weight:700; letter-spacing:1px; padding:6px 16px; border-radius:2px;">
+    ⚠️ 4월 30일 (수) 자정 폼 마감
+  </div>
+
+  <!-- 진행 바 -->
+  <div style="margin-top:20px; max-width:340px; margin-left:auto; margin-right:auto;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+      <span style="font-size:11px; color:var(--tx3);">특가 현황</span>
+      <span id="order-count" style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--acc); letter-spacing:1px;">— / 30</span>
+    </div>
+    <div style="background:var(--bg3); border-radius:2px; height:8px; overflow:hidden;">
+      <div id="order-bar" style="width:0%; height:100%; background:var(--acc); border-radius:2px; transition:width 0.6s ease;"></div>
+    </div>
+    <div style="font-size:11px; color:#ff4747; margin-top:6px;">선착순 30명 한정 · 4월 30일 마감</div>
+  </div>
+</div>
+
+<main>
+
+  <!-- 이 책은 -->
+  <div class="section">
+    <div class="section-label">About This Book</div>
+    <h2>이 책이 필요한 사람</h2>
+    <p>컴프레서를 걸면 뭔가 달라지는데, 왜 달라지는지 모르겠는 사람</p>
+    <p>어택/릴리스 숫자를 바꿔봐도 감이 안 잡히는 사람</p>
+    <p>1176과 LA-2A 차이를 모르고 그냥 쓰고 있는 사람</p>
+    <p>믹싱 영상을 봐도 실전에 적용이 안 되는 사람</p>
+  </div>
+
+  <!-- 목차 -->
+  <div class="section">
+    <div class="section-label">Contents</div>
+    <h2>목차 — 총 188페이지</h2>
+    <div class="toc">
+      <div class="toc-item"><span class="toc-num">01</span><span>컴프레서 기초 개념 — Threshold · Ratio · Attack · Release · Makeup Gain · Knee</span></div>
+      <div class="toc-item"><span class="toc-num">02</span><span>Variable MU — Fairchild 670 원리와 실전 사용법 · Manley Variable Mu</span></div>
+      <div class="toc-item"><span class="toc-num">03</span><span>Opto — LA-2A · Tube-Tech CL 1A/1B 특성과 보컬/베이스 세팅</span></div>
+      <div class="toc-item"><span class="toc-num">04</span><span>Opto — LA-3A · 시대별 컴프레서 발전과 피드포워드/피드백 원리</span></div>
+      <div class="toc-item"><span class="toc-num">05</span><span>FET — 1176 전 모드 설명 · All-Buttons Mode 원리 · 소스별 세팅</span></div>
+      <div class="toc-item"><span class="toc-num">06</span><span>VCA — SSL G-Bus · NEVE 33609A · Distressor EL-8X (디텍터 모드 포함)</span></div>
+      <div class="toc-item"><span class="toc-num">07</span><span>VCA — DBX 160 특성과 드럼/베이스 세팅 · VCA 계보 역사</span></div>
+      <div class="toc-item"><span class="toc-num">08</span><span>VCA — API 2500 · Thrust 기능 · Feed-Forward/Back 모드</span></div>
+      <div class="toc-item"><span class="toc-num">09</span><span>Diode — Chandler TG1 · 배음 착색 원리 · 실전 세팅</span></div>
+      <div class="toc-item"><span class="toc-num">10</span><span>사이드체인 — 킥&베이스 연동 · DAW별 라우팅 · Pre-fader 설정</span></div>
+      <div class="toc-item"><span class="toc-num">11</span><span>패러렐 컴프레션 — Brauerize 기법 · 실전 수치 · DAW별 설정</span></div>
+      <div class="toc-item"><span class="toc-num">12</span><span>Mid-Side 컴프레션 · 마스터링 시그널 체인 · 리미터 vs 클리퍼</span></div>
+      <div class="toc-item"><span class="toc-num">13</span><span>장르별 실전 세팅 — 팝 · R&B · 록/메탈 · EDM · 재즈</span></div>
+      <div class="toc-item"><span class="toc-num">14</span><span>그래미 거장 엔지니어 6인의 컴프레서 철학과 실전 기법</span></div>
+      <div class="toc-item"><span class="toc-num">15</span><span>복각 플러그인 완전 가이드 · 타입별 추천 · 목적별 선택법</span></div>
+    </div>
+  </div>
+
+  <!-- 특징 -->
+  <div class="section">
+    <div class="section-label">Features</div>
+    <h2>이 전자책의 특징</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎚️</div>
+        <h3>실전 세팅값 수록</h3>
+        <p>각 컴프레서별 보컬·드럼·베이스 소스에 맞는 실제 수치 제공</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>원리 기반 설명</h3>
+        <p>왜 그 세팅인지 이해하면 다른 플러그인에도 바로 적용 가능</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>그래미 엔지니어 분석</h3>
+        <p>거장들의 컴프레서 접근 방식을 원리로 해석해 완전히 내 것으로</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>비교 차트 수록</h3>
+        <p>타입별·소스별 컴프레서 선택 가이드 차트로 한눈에 정리</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>1년간 업데이트 무상 제공</h3>
+        <p>내용 추가·개정 시 구매자에게 최신 버전 파일을 무료로 재발송</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 계좌 안내 -->
+  <div class="section">
+    <div class="section-label">Payment</div>
+    <h2>입금 계좌 안내</h2>
+    <div style="background:var(--bg2); border:2px solid var(--acc); border-radius:4px; padding:28px 32px; text-align:center;">
+      <div style="font-size:12px; color:var(--tx3); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">특가 입금 계좌</div>
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--acc); letter-spacing:3px; margin-bottom:6px;">우리은행</div>
+      <div id="account-number" style="font-size:22px; font-weight:700; letter-spacing:2px; margin-bottom:6px;">1002-554-617711</div>
+      <div style="font-size:14px; color:var(--tx2); margin-bottom:20px;">예금주: 배성윤</div>
+      <button class="copy-btn" onclick="copyAccount()">계좌번호 복사</button>
+      <div class="copy-toast" id="copy-toast">✓ 복사되었습니다</div>
+      <div style="background:var(--bg3); border:1px solid var(--border); border-radius:3px; padding:14px 16px; font-size:13px; color:var(--tx2); line-height:1.8; text-align:left; margin-top:16px;">
+        입금액: <strong style="color:var(--acc);">18,000원</strong><br>
+        입금자명: 본인 이름으로 입금해 주세요<br>
+        입금 확인 후 입력하신 이메일로 즉시 발송됩니다
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="section">
+    <div class="section-label">Special Price</div>
+    <h2>특가 신청</h2>
+
+    <div class="form-box">
+      <div class="form-title">특가 신청하기</div>
+
+      <!-- 구매 혜택 -->
+      <div style="background:var(--bg3); border:1px solid var(--border); border-radius:4px; padding:16px 20px; margin-bottom:20px; font-size:13px; line-height:2;">
+        <div style="font-size:11px; letter-spacing:2px; color:var(--tx3); margin-bottom:8px;">BENEFITS</div>
+        <div>📚 <strong>컴프레서 완전정복</strong> 전자책 즉시 발송 (188페이지)</div>
+        <div>🔄 <strong style="color:var(--acc);">구매일로부터 1년간 업데이트 무상 제공</strong></div>
+        <div style="font-size:12px; color:var(--tx3); margin-left:22px;">내용 추가·개정 시 최신 버전 파일을 이메일로 다시 보내드립니다</div>
+      </div>
+
+      <div class="form-desc">
+        아래 정보를 입력해 주세요. 입금 확인 후 입력하신 이메일로 전자책 파일을 즉시 발송합니다.<br>
+        <strong style="color:var(--acc);">선착순 30명 마감 후에는 정가(24,000원)로만 구매 가능합니다. 지금이 가장 저렴합니다.</strong>
+      </div>
+
+      <form id="preorder-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc0JEZS7DsPD_RDLvR0k1fadI_y2cJFXhEUIy9lz1WC5UHJAg/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit()">
+
+        <div class="form-group">
+          <label>이름 <span class="required">*</span></label>
+          <input type="text" name="entry.763147536" placeholder="홍길동" required>
+        </div>
+
+        <div class="form-group">
+          <label>이메일 <span class="required">*</span></label>
+          <input type="email" name="entry.1693852851" placeholder="example@email.com" required>
+          <div class="hint">전자책 파일을 이 이메일로 즉시 발송합니다</div>
+        </div>
+
+        <div class="form-group">
+          <label>입금자명 <span class="required">*</span></label>
+          <input type="text" name="entry.821717915" placeholder="홍길동" required>
+          <div class="hint">입금 시 사용하신 이름을 입력해 주세요</div>
+        </div>
+
+        <div class="form-group">
+          <label>어디서 보시고 구매하시게 되셨나요?</label>
+          <select name="entry.1033676373">
+            <option value="">선택해주세요</option>
+            <option value="인스타">인스타</option>
+            <option value="유튜브">유튜브</option>
+            <option value="페이스북">페이스북</option>
+            <option value="스레드">스레드</option>
+            <option value="블로그">블로그</option>
+            <option value="기타">기타</option>
+          </select>
+        </div>
+
+        <div class="agree-box">
+          수집된 개인정보(이름, 이메일)는 전자책 파일 발송 및 MixingArt 서비스 안내 목적으로만 사용되며,
+          제3자에게 제공되지 않습니다.
+          <div class="agree-check">
+            <input type="checkbox" required>
+            <span>개인정보 수집 및 이용에 동의합니다 <span style="color:var(--acc);">*</span></span>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">특가 신청하기 (18,000원)</button>
+        <div class="submit-note">
+          ※ 입금 확인 후 이메일로 전자책 파일을 즉시 발송합니다<br>
+          ※ 30명 마감 시 신청이 자동 종료됩니다
+        </div>
+
+      </form>
+
+      <!-- 폼 제출 후 감사 메시지 -->
+      <div class="success-msg" id="success-msg">
+        <h3>신청 완료!</h3>
+        <p>
+          신청해 주셔서 감사합니다 🙏<br><br>
+          아래 계좌로 <strong style="color:var(--acc);">18,000원</strong>을 입금해 주시면<br>
+          입금 확인 후 입력하신 이메일로 즉시 발송해 드립니다.<br><br>
+          <span style="font-size:16px; font-weight:700; color:var(--acc);">우리은행 1002-554-617711 (배성윤)</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 학원 대량구입 -->
+  <div class="section">
+    <div class="section-label">Bulk Order</div>
+    <h2>학원 · 단체 대량구입 문의</h2>
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:4px; padding:28px 32px;">
+      <p style="color:var(--tx2); line-height:1.9; margin:0 0 20px;">
+        학원, 교육기관, 스터디 그룹 등 <strong style="color:var(--acc);">5부 이상</strong> 단체 구매 시<br>
+        별도 할인가로 제공해 드립니다.<br>
+        아래 카카오톡으로 문의해 주시면 빠르게 안내드리겠습니다.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:10px; font-size:14px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="color:var(--tx3); width:70px;">카카오톡</span>
+          <strong style="color:var(--acc);">mixingart</strong>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="color:var(--tx3); width:70px;">인스타그램</span>
+          <strong style="color:var(--acc);">@mixingart</strong>
+        </div>
+      </div>
+      <div style="margin-top:20px; padding:14px 16px; background:var(--bg3); border:1px solid var(--border); border-radius:3px; font-size:12px; color:var(--tx3); line-height:1.8;">
+        문의 시 구매 수량과 용도(학원/스터디 등)를 함께 알려주시면 더 빠르게 안내드립니다.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- iframe for form submit (페이지 이동 방지) -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<footer>
+  <div class="footer-brand">MixingArt — INGSPR</div>
+  <div class="footer-info">
+    믹싱 의뢰 · 레슨 문의 : KakaoTalk <strong style="color:var(--acc);">mixingart</strong><br>
+    포트폴리오 : <a href="https://youtube.com/playlist?list=PL-ivSMrZqftm0_h9O8gPzS4TBUPymZbJV&si=pVCtzrI282w6uL__" style="color:var(--acc);">YouTube 작업물 보기</a>
+  </div>
+</footer>
+
+<script>
+  // 계좌번호 복사
+  function copyAccount() {
+    const num = document.getElementById('account-number').textContent.replace(/-/g, '');
+    navigator.clipboard.writeText(num).then(() => {
+      const toast = document.getElementById('copy-toast');
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 2000);
+    });
+  }
+
+  // 폼 제출 후 감사 메시지 표시
+  function handleSubmit() {
+    setTimeout(() => {
+      document.getElementById('preorder-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }, 600);
+  }
+
+  // 진행 현황 바 업데이트
+  // Apps Script 웹 앱 배포 후 아래 URL을 교체하세요
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzx5fY_BQ-hChNb5Y3oNzx2OCAwmUKYzl-nWVZvLmT9nfIqlDgHZj8KeElXXLddENei/exec';
+
+  function updateOrderBar() {
+    if (!SCRIPT_URL || SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL') return;
+    fetch(SCRIPT_URL)
+      .then(r => r.json())
+      .then(data => {
+        const count = data.count || 0;
+        const max   = data.max   || 30;
+        const pct   = Math.min(100, Math.round((count / max) * 100));
+
+        const countEl = document.getElementById('order-count');
+        const barEl   = document.getElementById('order-bar');
+        if (countEl) countEl.textContent = count + ' / ' + max;
+        if (barEl)   barEl.style.width   = pct + '%';
+
+        // 마감 임박 (90% 이상) 강조
+        if (pct >= 90 && barEl) barEl.style.background = '#ff4747';
+      })
+      .catch(() => {}); // 실패해도 조용히
+  }
+
+  updateOrderBar();
+</script>
+
+</body>
+</html>
